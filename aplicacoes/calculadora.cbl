@@ -26,7 +26,8 @@
            88 MULTIPLICAR        VALUE "*".
            88 OPERADORESVALIDOS  VALUE "*"
                                  , "+","/","-".
-        01 RESULTADO      PIC Z(08) VALUE ZERO.
+                                 
+        01 RESULTADO      PIC S9(08)V9(2) USAGE DISPLAY.
 
       *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
@@ -41,16 +42,16 @@
            DISPLAY "Qual o segundo numero que deseja para a operação?".
            ACCEPT NUMEROFINAL.
            EVALUATE TRUE
+           
            WHEN DIVIDIR
-               DIVIDE NUMEROINICIAL INTO NUMEROFINAL
-               GIVING RESULTADO
+              DIVIDE NUMEROINICIAL BY NUMEROFINAL GIVING RESULTADO
 
            WHEN SOMAR
                ADD NUMEROINICIAL, NUMEROFINAL GIVING
                RESULTADO
 
            WHEN SUBTRAIR
-               SUBTRACT NUMEROINICIAL FROM NUMEROFINAL
+               SUBTRACT NUMEROFINAL FROM NUMEROINICIAL
                GIVING RESULTADO
 
            WHEN MULTIPLICAR
@@ -61,7 +62,7 @@
            END-EVALUATE
 
            IF OPERADORESVALIDOS
-               DISPLAY "RESULTADO ES = " RESULTADO
+               DISPLAY "ES = " RESULTADO 
            END-IF
 
            STOP RUN.
@@ -72,7 +73,6 @@
       **
       * The main procedure of the program
       **
-            DISPLAY "Hello world"
-            STOP RUN.
+
       ** add other procedures here
        END PROGRAM CALCULADORA.
