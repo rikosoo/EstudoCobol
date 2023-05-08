@@ -1,7 +1,7 @@
       ******************************************************************
-      * Author:
-      * Date:
-      * Purpose:
+      * Author: HENRIQUE STEFANUTTI    
+      * Date:  05/2023
+      * Purpose: APRENDER OPERAÇÕES E VARIAVEIS EM COBOL
       * Tectonics: cobc
       ******************************************************************
        IDENTIFICATION DIVISION.
@@ -18,20 +18,23 @@
        WORKING-STORAGE SECTION.
         01 NUMEROINICIAL   PIC  9(5)            VALUE ZERO.
         01 NUMEROFINAL      PIC  9(5)           VALUE ZERO.
-        01 RESULT PIC 9(5)                VALUE ZERO.
         01 OPERADOR              PIC X VALUE "+".
            88 DIVIDIR            VALUE "/".
            88 SOMAR              VALUE "+".
            88 SUBTRAIR           VALUE "-".
            88 MULTIPLICAR        VALUE "*".
-           88 OPERADORESVALIDOS  VALUE "*"
-                                 , "+","/","-".
+           88 OPERADORESVALIDOS  VALUE "*","+","/","-".
                                  
-        01 RESULTADO      PIC S9(08)V9(2) USAGE DISPLAY.
+        01 RESULTADO PIC S9(5)V9(2) VALUE ZERO.
+        
+        
+
+           
 
       *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
        PROCEDURE DIVISION.
+           
        MAIN-PROCEDURE.
            DISPLAY "BEM-VINDO À CALCULADORA DO HENRICÃO".
 
@@ -61,8 +64,14 @@
 
            END-EVALUATE
 
-           IF OPERADORESVALIDOS
-               DISPLAY "ES = " RESULTADO 
+             IF OPERADORESVALIDOS
+  
+               
+         
+
+           DISPLAY "ES = " RESULTADO
+
+
            END-IF
 
            STOP RUN.
