@@ -26,19 +26,19 @@
            88 MULTIPLICAR        VALUE "*".
            88 OPERADORESVALIDOS  VALUE "*"
                                  , "+","/","-".
-        01 RESULTADO       PIC S9(5)V9(2) VALUE ZERO GLOBAL .
+        01 RESULTADO      PIC ZZ,ZZZ.ZZ.  
 
       *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
-           DISPLAY "BEM-VINDO ¿ CALCULADORA DO HENRIC√O".
+           DISPLAY "BEM-VINDO √Ä CALCULADORA DO HENRIC√ÉO".
 
            DISPLAY "Coloque o primeiro numero".
            ACCEPT NUMEROINICIAL.
-           DISPLAY "Qual operaÁ„o deseja realizar? +, -, * e /.".
+           DISPLAY "Qual opera√ß√£o deseja realizar? +, -, * e /.".
            ACCEPT OPERADOR.
-           DISPLAY "Qual o segundo numero que deseja para a operaÁ„o?".
+           DISPLAY "Qual o segundo numero que deseja para a opera√ß√£o?".
            ACCEPT NUMEROFINAL.
            EVALUATE TRUE
            WHEN DIVIDIR
