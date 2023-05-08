@@ -1,0 +1,63 @@
+      ******************************************************************
+      * Author:
+      * Date:
+      * Purpose:
+      * Tectonics: cobc
+      ******************************************************************
+       IDENTIFICATION DIVISION.
+      *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+       PROGRAM-ID. CONTABANCARIA.
+       ENVIRONMENT DIVISION.
+      *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+       CONFIGURATION SECTION.
+      *-----------------------
+       INPUT-OUTPUT SECTION.
+      *-----------------------
+       DATA DIVISION.
+      *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+       FILE SECTION.
+      *-----------------------
+       WORKING-STORAGE SECTION.
+        01    SALDO-ATUAL PIC 9(6)V99 VALUE 1000.
+        01    VALOR-TRANSACAO PIC 9(6)V99 VALUE 0.
+        01    OPCAO    PIC X.
+       
+       
+       PROCEDURE DIVISION.
+      *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+       MAIN-PROCEDURE.
+           
+            DISPLAY "Bem-vindo ao Banco do Henricão".
+            DISPLAY "Seu saldo atual é de: R$ " SALDO-ATUAL.
+            PERFORM UNTIL OPCAO ="0"
+                DISPLAY "O que deseja fazer? (Digite 0 para sair)"
+                DISPLAY "1 - Depositar dinheiro"
+                DISPLAY "2 - Retirar dinheiro"
+                DISPLAY "3 - Visualizar Saldo"
+            ACCEPT OPCAO
+            
+            EVALUATE OPCAO
+            WHEN "1"
+               DISPLAY "Digite o valor a ser depositado: "
+               ACCEPT VALOR-TRANSACAO
+               ADD VALOR-TRANSACAO TO SALDO-ATUAL
+            WHEN "2"
+               DISPLAY "Digite o valor a ser retirado: "
+               ACCEPT VALOR-TRANSACAO
+               IF VALOR-TRANSACAO <=SALDO-ATUAL
+               SUBTRACT VALOR-TRANSACAO FROM SALDO-ATUAL
+               
+               ELSE
+                   DISPLAY "Saldo insuficiente!!"
+               END-IF
+               WHEN "3"
+                   DISPLAY "Seu saldo atual é de: R$ " SALDO-ATUAL
+                END-EVALUATE 
+               END-PERFORM
+               
+               DISPLAY "Obrigado por utilizar o banco do Henricão!!"
+               
+            STOP RUN.
+      ** add other procedures here
+       END PROGRAM CONTABANCARIA.
+
