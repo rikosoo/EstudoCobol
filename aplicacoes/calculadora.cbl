@@ -25,7 +25,7 @@
            88 MULTIPLICAR        VALUE "*".
            88 OPERADORESVALIDOS  VALUE "*","+","/","-".
                                  
-        01 RESULTADO PIC S9(5)V9(2) VALUE ZERO.
+        01 RESULTADO      PIC --,--9.99.  
         
         
 
