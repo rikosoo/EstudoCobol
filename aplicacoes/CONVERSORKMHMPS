@@ -1,0 +1,42 @@
+      ******************************************************************
+      * Author:
+      * Date:
+      * Purpose:
+      * Tectonics: cobc
+      ******************************************************************
+       IDENTIFICATION DIVISION.
+      *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+       PROGRAM-ID. JOGO-DA-VELHA.
+       ENVIRONMENT DIVISION.
+      *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+       CONFIGURATION SECTION.
+      *-----------------------
+       INPUT-OUTPUT SECTION.
+      *-----------------------
+       DATA DIVISION.
+      *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+       FILE SECTION.
+      *-----------------------
+       WORKING-STORAGE SECTION.
+       01 KMH PIC 9(7)V99.
+       01 MPS PIC --,--9.99.
+
+       PROCEDURE DIVISION.
+            DISPLAY "CONVERSAO DE QUILOMETROS POR HORA PARA METROS"
+            "POR SEGUNDO".
+           DISPLAY "DIGITE A VELOCIDADE EM QUILOMETROS POR HORA: ".
+           ACCEPT KMH.
+
+           COMPUTE MPS = KMH / 3.6.
+
+           DISPLAY "A VELOCIDADE CONVERTIDA EM METROS POR SEGUNDO E: ", 
+           MPS.
+           STOP RUN.
+
+       MAIN-PROCEDURE.
+      **
+      * The main procedure of the program
+      **
+
+      ** add other procedures here
+       END PROGRAM JOGO-DA-VELHA.
